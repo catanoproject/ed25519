@@ -98,7 +98,7 @@ static void Verify(const v8::FunctionCallbackInfo<v8::Value>& info) {
 	ISOLATE(info);
 	if ((info.Length() < 3) || (!Buffer::HasInstance(info[0]->ToObject())) ||
 		(!Buffer::HasInstance(info[1]->ToObject())) || (!Buffer::HasInstance(info[2]->ToObject()))) {
-		TYPEERROR(Verify requires Buffer, Buffer(64), Buffer(32))
+		TYPEERROR(Verify requires (Buffer, Buffer(64), Buffer(32)))
 	}
 	Handle<Object> message = info[0]->ToObject();
 	Handle<Object> signature = info[1]->ToObject();
